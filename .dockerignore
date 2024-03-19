@@ -1,0 +1,13 @@
+.git
+.history
+.vscode
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+deploy/
+docs/
+playground
+.github/
+node_modules/
+test-results/
+docker-compose.yml
