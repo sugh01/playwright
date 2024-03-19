@@ -22,6 +22,7 @@ npx playwright show-report
 ### Compile a compose file, pass the shard count from the cmd line
 ```bash
 rm docker-compose.yml
+chmod +x ./compose.sh
 ./compose.sh 6
 ```
 ### Run the compose file
