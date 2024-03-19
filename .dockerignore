@@ -11,3 +11,5 @@ playground
 node_modules/
 test-results/
 docker-compose.yml
+k8s
+Dockerfile
