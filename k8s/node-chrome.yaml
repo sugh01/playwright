@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: selenium-node-chrome-rep
+spec:  
+  replicas: 3
+  selector:
+    app: selenium-node-chrome
+  template:
+    metadata:
+      name: selenium-node-chrome
+      labels:
+        app: selenium-node-chrome
+    spec:
+      containers:
+        - name: selenium-node-chrome
+          image: seleniarm/node-chromium:121.0
+          ports:
+            - containerPort: 5555
+          env:
+           - name: SE_EVENT_BUS_HOST
+             value: "selenium-srv"
+           - name: SE_NODE_GRID_URL
+             value: "http://selenium-srv:30001"
+           - name: SE_EVENT_BUS_PUBLISH_PORT
+             value: "4442"
+           - name: SE_EVENT_BUS_SUBSCRIBE_PORT
+             value: "4443"
