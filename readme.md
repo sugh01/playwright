@@ -68,3 +68,9 @@ npx playwright show-report
 ```bash
 kubectl delete namespaces grid
 ```
+
+## Few notes on my attempts to run on a selenium hub
+
+The K8s folder would have another set of yaml files which assists in seting up a hub and node, but there is a bug which restricts the node from registering into the hub, it is not a k8 thing though, i tried with docker hub and node going by the official playwrigt docs and that did not work as well. One possible reason may be that i am running on ```arm```. 
+I have also added a ```values.yaml``` file to run ```selenium-grid``` with helm 
+```https://github.com/SeleniumHQ/docker-selenium/tree/trunk/charts/selenium-grid```. Though it sets up properly with helm and nodes register to hubs, playwright was not able to connect to a session. Will be worth looking into sometime.
